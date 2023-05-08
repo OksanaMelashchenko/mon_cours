@@ -1,14 +1,14 @@
 import json
 
-class Student(object):
-
+class Student:
+    
     def __init__(self, first_name, last_name):
         self.first_name = first_name
         self.last_name = last_name
 
     def info(self):
         d = {}
-        d[ 'first_name'] = self.first_name
+        d['first_name'] = self.first_name
         d['last_name'] = self.last_name
         return print(d)
 
@@ -18,7 +18,6 @@ student.info()
 
 
 class Storage:
-
     def __init__(self):
         self.fruits_list = []
 
@@ -62,28 +61,22 @@ fruits_storage.get('')
 fruits_storage.get('a')
 fruits_storage.get('p')
 fruits_storage.get('abc')
-
 fruits_storage.add('pear')
-
 fruits_storage.get('')
 
 
 class Course(Student):
-
     def __init__(self, curs):
         self.curs = curs
 
-    def add_student(self, object):
+    def add_student(self, object1):
         f = {}
         f['name'] = self.curs
         f['students'] = [{'first_name': student.first_name, 'last_name': student.last_name}]
         print('f=', f)
         return f
 
-    def to_json(self):
-       pass
 
 python_basic = Course('Python basic')
-python_basic.add_student(Student('Jane', 'Doe'))
 
-#python_basic.to_json()
+python_basic.add_student(Student('Jane', 'Doe'))
